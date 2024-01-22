@@ -25,38 +25,7 @@ public class SpringGraphQlApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         log.info("Server running at {}", port);
-
-        int len = this.bookService.getAllBooks().size();
-        if (len == 0) {
-            Book book1 = Book.builder()
-                    .booktitle("Book 1")
-                    .bookauthor("Author 1")
-                    .bookdescription("Description 1")
-                    .bookpages(208)
-                    .bookprice(250)
-                    .build();
-
-            Book book2 = Book.builder()
-                    .booktitle("Book 2")
-                    .bookauthor("Author 2")
-                    .bookdescription("Description 2")
-                    .bookpages(208)
-                    .bookprice(250)
-                    .build();
-
-            Book book3 = Book.builder()
-                    .booktitle("Book 3")
-                    .bookauthor("Author 3")
-                    .bookdescription("Description 3")
-                    .bookpages(208)
-                    .bookprice(250)
-                    .build();
-
-            this.bookService.createBook(book1);
-            this.bookService.createBook(book2);
-            this.bookService.createBook(book3);
-        }
     }
 }
