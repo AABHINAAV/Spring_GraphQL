@@ -1,0 +1,29 @@
+type Mutation{
+    createBook(book: BookInput): Book
+}
+
+# query banti hai data ko get krne k liye
+type Query {
+    getAllBooks: [Book]
+    getBookById(bookId: Int): Book
+}
+
+
+
+# yah hm bata rahe h kis type k data(entity) pr kaam kr rahe hai
+type Book {
+    bookid: ID!
+    booktitle: String
+    bookauthor: String
+    bookdescription: String
+    bookpages: Int
+    bookprice: Int
+}
+
+input BookInput{
+    booktitle: String
+    bookauthor: String
+    bookdescription: String
+    bookpages: Int
+    bookprice: Int
+}
